@@ -25,7 +25,9 @@ public class ErrorHandlerController {
 
 	
 	@ExceptionHandler({NumberFormatException.class})
+
 		public String formatError(NumberFormatException ex,Model model) {
+
 		model.addAttribute("error", "Error al convertir el String");
 		model.addAttribute("message", ex.getMessage());
 		model.addAttribute("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
@@ -43,5 +45,6 @@ public class ErrorHandlerController {
 		return "error/usuario";
 		
 	}
+
 
 }
